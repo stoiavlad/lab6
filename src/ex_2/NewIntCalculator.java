@@ -1,4 +1,4 @@
-package ex_2;
+package ex2;
 
 class NewIntCalculator extends ACalculator {
     public NewIntCalculator(int state) {
@@ -22,6 +22,13 @@ class NewIntCalculator extends ACalculator {
 
     public NewIntCalculator multiply(int value) {
         this.state = (Integer) this.state * value;
+        return this;
+    }
+    public NewIntCalculator divide(int value) {
+        if (value == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
+        this.state = (Integer) this.state / value;
         return this;
     }
 }

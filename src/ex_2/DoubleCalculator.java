@@ -1,4 +1,4 @@
-package ex_2;
+package ex2;
 
 class DoubleCalculator extends ACalculator {
     public DoubleCalculator(double state) {
@@ -22,6 +22,14 @@ class DoubleCalculator extends ACalculator {
 
     public DoubleCalculator multiply(double value) {
         this.state = (Double) this.state * value;
+        return this;
+    }
+
+    public DoubleCalculator divide(double value) {
+        if (value == 0.0) {
+            throw new ArithmeticException("Division by zero");
+        }
+        this.state = (Double) this.state / value;
         return this;
     }
 }
